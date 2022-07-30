@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Deuteranopia</title>
+	<meta charset="utf-8">
+  <link rel="icon" href="lambda.JPEG" type="image/x-icon">
+  <meta name="viewport" content="width=1024">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style2.css">
+</head>
+<body>
+
+<!--   <p id="tr1"></p>
+  <p id="r1"></p>
+  <p id="g1"></p>
+  <p id="b1"></p>
+ 
+	<header id="header">
+				<h1><strong><a href="index.html">Lambda</a></strong></h1>
+				<nav id="nav">
+					<ul>
+						<li><a class="hover" href="index.html">Home</a></li>
+						<li><a class="hover"  href="generic.html">Simulation</a></li>
+						<li><a class="hover" href="contact.html">Feedback</a></li>
+						<li><a class="hover" href="index13.html">Log in</a>&nbsp;&nbsp;</li>
+						<i class="fa fa-language" aria-hidden="true"></i>
+
+					</ul>
+				</nav>
+			</header>  -->
+      <div class="container-fluid">
+        <div class="row">
+          <header id="header" class="skel-layers-fixed">
+        <h1><a href="Home.html">Lambda</a></h1>
+        <nav id="nav">
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="trit.html" >Tritanopia</a></li>
+            <li><a href="Deut.html" style="color:blue;">Deuteranopia</a></li>
+            <li><a href="rgb.html">Glasses Vision</a></li>
+            
+          </ul>
+        </nav>
+      </header>
+        </div>
+      </div>
+
+<div class="container" >
+<div class="row">
+  
+</div>
+	<div class="row">
+		<div class="col-sm-3" >
+			<div class="colorinput">
+        <p id="tr1"></p>
+  <p id="r1"></p>
+  <p id="g1"></p>
+  <p id="b1"></p>
+   <p id="tr2"></p>
+  <p id="r2"></p>
+  <p id="g2"></p>
+  <p id="b2"></p>
+    <div style="float: left;">R: </div>
+    <span id="valRed" ></span>
+    <br>
+    <br>
+    <!-- R:<span id="blindr"></span>
+    <br> -->
+    Deuteranopia:<span id="blindRGB" ></span>
+  </div>
+  
+  <div class="colorslider">
+    <div id="redtable"></div>
+    <input oninput="changeRed(this.value)" onchange="changeRed(this.value)" type="range" id="slideRed" name="slideRed" min="0" max="255" value="0">
+    
+  </div>
+<div class="w3-row">
+  <div class="w3-col colorinput" style="margin-top: 20px;">
+    <div style="float:left;">G: </div>
+    <span id="valGreen"></span>
+    <br><!-- 
+    Normal:<span id="greenRGB" ></span>,
+    G:<span id="blindg"></span>, -->
+    Deuteranopia:<span id="blindRGB1" ></span>
+  </div>
+  <div class="colorslider">
+    <div id="greentable"></div>
+<input oninput="changeGreen(this.value)" onchange="changeGreen(this.value)" type="range" id="slideGreen" name="slideGreen" min="0" max="255"value="0">
+  </div>
+</div>
+  <div class="colorinput" style="margin-top: 33px;">
+    <div style="width:30px;float:left;">B:</div>
+    <span id="valBlue"></span>
+    <br>
+    <!-- Normal:<span id="blueRGB" ></span>
+    <br>
+    G:<span id="blindb"></span>
+    <br> -->
+    Deuteranopia:<span id="blindRGB2" ></span>
+  </div>
+  <div class="colorslider">
+    <div id="bluetable"></div>
+<input oninput="changeBlue(this.value)" onchange="changeBlue(this.value)" type="range" id="slideBlue" name="slideBlue" min="0" max="255" value="0">
+  </div>
+      
+ <script type="text/javascript">
+
+	document.getElementById('valRed').innerHTML =0;
+    document.getElementById('valGreen').innerHTML=0;
+    document.getElementById('valBlue').innerHTML=0;
+    // document.getElementById('blindr').innerHTML =0;
+    // document.getElementById('blindg').innerHTML =0;
+    // document.getElementById('blindb').innerHTML =0;
+    
+	function drawRedTable() {
+    var x, i, n, g, b;
+    g = 0;
+    b = 0;
+    x = "<table class='tableslider'>"
+    x += "<tr>";
+    n = 0;
+    for (i = 0; i <= 255; i++) {
+        n = i;
+        x += "<td";
+        x += " style='position:relative;padding:0;'><div class='pointer' id='redpointer" + n + "'><div>" + n + "</div><i class='fa fa-caret-down'></i></div></td>";
+    }
+    x += "</tr>";
+    x += "<tr>";
+    n = 0;
+    for (i = 0; i <= 255; i++) {
+        n = i;
+        x += "<td style='background-color:rgb(" + n + "," + g + "," + b + ");height:22px;padding:0;' onmousemove='tooltip(0, " + n + ")' onclick='clickRed(" + n + ")'></td>";
+    }
+    x += "</tr>";
+    x += "</table>";
+    document.getElementById("redtable").innerHTML = x;
+}
+function drawGreenTable() {
+    var x, i, r, b;
+    r = 0;
+    b = 0;
+    x = "<table class='tableslider'>"
+    x += "<tr>";
+    for (i = 0; i <= 255; i++) {
+        x += "<td style='position:relative;padding:0;'><div class='pointer' id='greenpointer" + i + "'><div>" + i + "</div><i class='fa fa-caret-down'></i></div></td>";
+    }
+    x += "</tr>";
+    x += "<tr>";
+    for (i = 0; i <= 255; i++) {
+        x += "<td style='background-color: rgb(" + r + ", " + i + "," + b + ");height:22px;padding:0;' onmousemove='tooltip(1, " + i + ")' onclick='clickGreen(" + i + ")'></td>";
+    }
+    x += "</tr></table>";
+    document.getElementById("greentable").innerHTML = x;
+}
+function drawBlueTable() {
+    var x, i, r, g;
+    r = 0;
+    g = 0;
+    x = "<table class='tableslider'>"
+    x += "<tr>";
+    for (i = 0; i <= 255; i++) {
+        x += "<td style='position:relative;padding:0;'><div class='pointer' id='bluepointer" + i + "'><div>" + i + "</div><i class='fa fa-caret-down'></i></div></td>";
+    }
+    x += "</tr>";
+    x += "<tr>";
+    for (i = 0; i <= 255; i++) {
+        x += "<td style='background-color: rgb(" + r + "," + g + "," + i + ");height:22px;padding:0;' onmousemove='tooltip(2, " + i + ")' onclick='clickBlue(" + i + ")'></td>";
+    }
+    x += "</tr></table>";
+    document.getElementById("bluetable").innerHTML = x;
+}
+drawRedTable(0);
+drawGreenTable(0);
+drawBlueTable(0);
+function changeRed(value) {
+    document.getElementById('valRed').innerHTML = value;
+    // document.getElementById('RedRGB').innerHTML = "RGB("+value+",0,0)";
+    changeAll();
+}
+function changeGreen(value) {
+    document.getElementById('valGreen').innerHTML = value;
+/*    document.getElementById('greenRGB').innerHTML = "RGB(0,"+value+",0)";
+*/    changeAll();
+}
+function changeBlue(value) {
+    document.getElementById('valBlue').innerHTML = value;
+    // document.getElementById('blueRGB').innerHTML = "RGB(0,0,"+value+")";
+    changeAll();
+}
+function changeAll() {
+    
+    var r = document.getElementById('valRed').innerHTML;
+    var g = document.getElementById('valGreen').innerHTML;
+    var b = document.getElementById('valBlue').innerHTML;
+    var newG, newB, newr, TrB, GforBlue, tr, GforReg =0;
+    if (r !=0 && g==0 && b==0) {
+    
+
+   tr = parseInt((8.1438)+(0.620863)*r);
+  GforReg =parseInt((6.02078)+(0.475248)*r)
+  
+    }
+
+    if (r ==0 && g!=0 && b==0) {
+     newG = (10.4863)+(0.785592)*g;
+     newG = parseInt(newG);
+     
+     newr= (14.414)+(1.02209)*g;
+     newr = parseInt(newr);
+
+     newB= (2.78992)+(0.24162)*g;
+     newB = parseInt(newB);
+    }
+    if (r ==0 && g==0 && b!=0) {
+      var TrB =(6.58281)+(0.514973)*b ;
+     TrB = parseInt(TrB);
+     var GforBlue = (4.01641)+(0.327484)*b;
+     GforBlue = parseInt(GforBlue);
+         
+  
+    }
+    
+    if (r != 0 && b==0 && g == 0) {
+    	document.getElementById("child3").style.visibility = "visible";
+      r=tr;
+      g=GforReg;
+      document.getElementById('blindRGB').innerHTML = "RGB(" + r + "," + g + "," + b + ")";
+
+    
+    }
+    else if (r==0) {
+    	document.getElementById("child3").style.visibility = "hidden";
+       document.getElementById('blindRGB').innerHTML = "RGB(" + 0 + "," + 0 + "," + 0 + ")";
+    }
+     if (g != 0 && r==0 && b==0) {
+         document.getElementById("child2").style.visibility = "visible";
+         r= newr;
+         g=newG;
+         b=newB;
+        document.getElementById('blindRGB1').innerHTML = "RGB(" + r + "," + g + "," + b + ")";
+
+    }
+    else if (g == 0) {
+    	document.getElementById("child2").style.visibility = "hidden";
+      document.getElementById('blindRGB1').innerHTML = "RGB(" + 0 + "," + 0 + "," + 0 + ")";
+
+
+    }
+     if (b != 0 && r==0 && g == 0) {
+    	document.getElementById("child5").style.visibility = "visible";
+      g= GforBlue;
+      b= TrB;
+      document.getElementById('blindRGB2').innerHTML = "RGB(" + r + "," + g + "," + b + ")";
+    }
+    else if (b == 0) {
+    	document.getElementById("child5").style.visibility = "hidden";
+      document.getElementById('blindRGB2').innerHTML = "RGB(" + 0 + "," + 0 + "," + 0 + ")";
+    }
+//     document.getElementById('blindr').innerHTML = tr;
+    
+//     document.getElementById('blindg').innerHTML = newG;
+// document.getElementById('blindb').innerHTML = TrB;
+
+       document.getElementById('circle1').style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+    document.getElementById('circle2').style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+    document.getElementById('circle3').style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+    document.getElementById('circle4').style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+
+}
+</script>
+		</div>
+
+		<div class="col-sm-2" class="test">
+			<img src="images/flash1.JPG"   id="parent2">
+	<img id="child4" src="images/face.JFIF" style="width: 350px;margin-left: 300px;">
+
+			<svg id="child2" height="200" width="500" visibility= "hidden"; >
+ <polyline   points="24.5,25 375,3 375,70 24.5,50" 
+ style="fill:green;stroke:green;stroke-width:3" opacity="0.7"/>
+</svg>
+<svg id="child3" height="200" width="500" visibility= "hidden"; >
+ <polyline   points="25,26 375,120 375,187 12,50" 
+ style="fill:red;stroke:red;stroke-width:3"   
+ opacity="0.7"/>
+</svg>
+
+<svg id="child5" height="200" width="500" visibility= "hidden";  >
+ <polyline   points="10,145 377,3 377,70 24,169" 
+ style="fill:blue;stroke:blue;stroke-width:3" opacity="0.7"/>
+</svg>
+
+			<!-- <img src="flash2.JPG" style="margin-top: 48px;" class="flashlight">
+			<svg height="200" width="500" >
+ <polyline points="20,25 400,3 400,70 20,50" 
+ style="fill:red;stroke:red;stroke-width:3" />
+</svg> -->
+
+			<!-- img src="red.JPG" class="flashlight" style="margin-top: 60px;">
+			<br><br>
+			<img src="green.JPG" class="flashlight">
+			<br><br>
+
+			<img src="blue.JPG" class="flashlight"> -->
+		</div>
+    <div class="col-sm-4">
+            <p id="circle1" style="height: 70px;width: 170px;background-color: #555;border-radius: 50%;"></p>
+           <p id="circle2" style="height: 50px;width: 120px;background-color: #555;border-radius: 50%;margin-top: 10px;"></p>
+           <p id="circle3" style="height: 25px;width: 50px;background-color: #555;border-radius: 50%;"></p>
+            <p id="circle4" style="height: 10px;width: 25px;background-color: #555;border-radius: 50%;"></p>
+
+
+    </div>
+    <div class="col-sm-1">
+      <!-- <p id="circle1" style="height: 50px;width: 100px;background-color: #555;border-radius: 50%;"></p>
+      <p id="circle" style="height: 50px;width: 100px;background-color: #555;border-radius: 50%;margin-top: 10px;"></p>
+    </div>
+		<div class="col-sm-1">
+
+      <p id="circle" style="height: 50px;width: 100px;background-color: #555;border-radius: 50%;"></p>
+      <p id="circle" style="height: 25px;width: 50px;background-color: #555;border-radius: 50%;"></p>
+ -->
+		</div> 
+	</div>
+</div>
+</body>
+</html>s

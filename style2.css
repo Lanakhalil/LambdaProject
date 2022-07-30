@@ -1,0 +1,258 @@
+
+  body {
+    color: #555f66;
+    font-family: "Roboto", Helvetica, sans-serif;
+    font-size: 14pt;
+    
+  }
+  li {
+    color: #555f66;
+    font-family: "Roboto", Helvetica, sans-serif;
+    font-size: 14pt;
+    font-weight: 300;
+    line-height: 1.75em;
+  }
+
+  a {
+    color: #629DD1;
+    text-decoration: underline;
+  }
+
+    a:hover {
+      text-decoration: none;
+    }
+  #skel-layers-wrapper {
+    padding-top: 3em;
+  }
+p {
+    margin: 0 0 2em 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #666f77;
+    font-weight: 300;
+    line-height: 1em;
+    margin: 0 0 1em 0;
+    text-transform: uppercase;
+    letter-spacing: 0.125em;
+  }
+
+    h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+  h2 {
+    font-size: 1.5em;
+    line-height: 1.5em;
+  }
+
+  h3 {
+    font-size: 1.25em;
+    line-height: 1.5em;
+  }
+
+  h4 {
+    font-size: 1em;
+    line-height: 1.5em;
+  }
+
+  h5 {
+    font-size: 0.9em;
+    line-height: 1.5em;
+  }
+
+  h6 {
+    font-size: 0.7em;}
+    
+  #header {
+    background: #fff;
+    color: #555f66;
+    cursor: default;
+    height: 3em;
+    left: 0;
+    line-height: 3em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+    box-shadow: 0 0 0.1em 0 rgba(0, 0, 0, 0.25);
+  }
+
+    #header h1 {
+      color: #666f77;
+      font-weight: 500;
+      height: inherit;
+      left: 1.25em;
+      line-height: inherit;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      top: 0;
+    }
+
+      #header h1 a {
+        font-size: 1.25em;
+      }
+
+    #header nav {
+      height: inherit;
+      line-height: inherit;
+      position: absolute;
+      right: 1.25em;
+      top: 0;
+      vertical-align: middle;
+    }
+
+      #header nav > ul {
+        list-style: none;
+        margin: 0;
+        padding-left: 0;
+      }
+
+        #header nav > ul > li {
+          border-radius: 6px;
+          display: inline-block;
+          margin-left: 2em;
+          padding-left: 0;
+        }
+
+          #header nav > ul > li a {
+            -moz-transition: color 0.2s ease-in-out;
+            -webkit-transition: color 0.2s ease-in-out;
+            -o-transition: color 0.2s ease-in-out;
+            -ms-transition: color 0.2s ease-in-out;
+            transition: color 0.2s ease-in-out;
+            color: #555f66;
+            display: inline-block;
+            text-decoration: none;
+          }
+
+            #header nav > ul > li a:hover {
+              color: #629DD1;
+            }
+
+          #header nav > ul > li:first-child {
+            margin-left: 0;
+          }
+
+          #header nav > ul > li .button {
+            height: 2.25em;
+            line-height: 2.25em;
+            margin-bottom: 0;
+            padding: 0 1em;
+            position: relative;
+            top: -0.075em;
+            vertical-align: middle;
+          }
+
+    #header .container {
+      position: relative;
+    }
+
+      #header .container h1 {
+        left: 0;
+      }
+
+      #header .container nav {
+        right: 0;
+      }
+
+		.colorinput {
+    width:105px;
+    padding:15px 0 15px 0;
+}
+.colorslider {
+    padding:30px 0 15px 20px;
+}
+.tableslider {
+    width:200px;
+    border-collapse:collapse;
+}
+.pointer {
+    text-align:center;display:none;position:absolute;top:-14px;left:-2px;
+}
+.pointer div{
+    background-color:#ffffff;     
+    border:1px solid #aaaaaa;
+    height:24px;
+    width:40px;
+    padding:2px 0;
+    position:absolute;
+    text-align:center;
+    top:-14px;
+    left:-15px;
+    color:#000000;   
+    border-radius:4px;
+    font:14px verdana;
+}
+
+.pointer div::selection {
+    color: #000000;
+    background: #ffffff;
+}
+.pointer i{
+    color:#aaaaaa
+}
+@media screen and (max-width:600px) {
+    .colorinput {
+        padding:25px 0 0 0;
+    }
+    .colorslider {
+        width:100%;
+        padding:30px 25px 15px 20px;
+    }
+}
+input[type="range"] {
+  margin-left: 15px;
+  width: 170px;
+}
+
+#parent2 {
+	margin-top: 150px;
+  position: relative;
+ 
+  height: 380px;
+}
+
+#child2 {
+  position: absolute;
+  
+  top: 308px;
+left: 104px;
+}
+#child3 {
+  position: absolute;
+ 
+  top: 201px;
+left: 104px;
+}
+#child5 {
+  position: absolute;
+ 
+  top: 298px;
+left: 104px;
+}
+#child4 {
+  position: absolute;
+  top: 201px;
+left: 104px;
+margin-right: 15px;
+}
+#circle1 {
+  margin-left: 550px;
+  margin-top: 77px;
+}
+#circle2 {
+  margin-left: 540px;
+  margin-top: 77px;
+}
+#circle3 {
+  margin-left: 530px;
+  margin-top: 15px;
+}
+#circle4 {
+  margin-left: 520px;
+  margin-top: 15px;
+}
+
